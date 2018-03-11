@@ -58,3 +58,17 @@ public:
     }
 };
 
+4. Longest Common Prefix
+class Solution 
+{
+public:
+    string longestCommonPrefix(vector<string>& strs) 
+    {
+        string result = "";
+        for(int idx=0; strs.size()>0;result+=strs[0][idx],idx++)
+            for(int i=0;i<strs.size();i++)
+                if(idx>strs[0].size()||strs[i][idx]!=strs[i+1][idx])
+                    return result;
+        return result;
+    }
+};
