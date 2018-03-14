@@ -96,3 +96,20 @@ public:
         return -1;
     }
 };
+
+6. Length of Last Word
+class Solution 
+{
+public:
+    int lengthOfLastWord(string s) 
+    {
+       int len = 0; int tail = s.length() -1;
+       while(tail >=0&&s[tail]==' ')tail--;
+       while(tail >=0&&s[tail]!=' ')
+        {
+            len++;
+            tail--;
+        }
+            return len;
+    }
+};
