@@ -168,16 +168,22 @@ public:
 class Solution 
 {
 public:
-   int removeDuplicates(vector<int>& nums) 
+   int removeDuplicates(vector<int>& nums) {
+    
+    vector<int>::iterator i;
+   
+   for(i=nums.begin();i<nums.end();)
    {
-    int pos = 0;
-
-    for (int i = 0; i < nums.size(); ++i)
-    {
-        if (i == 0 || nums[i] != nums[pos - 1])
-            nums[pos++] = nums[i];
-    }
-
-    return pos;
-    }
+       if((i+1)!= nums.end())
+       {
+            if(*i == *(i+1))
+           i = nums.erase(i);
+           else
+               i++;
+       }
+    else
+        break;
+   }
+       return nums.size();
+}
 };
